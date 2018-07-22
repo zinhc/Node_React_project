@@ -23,7 +23,8 @@ passport.use(
     {
       clientID: keys.googleClientID,
       clientSecret: keys.googleClientSecret,
-      callbackURL: '/auth/google/callback'
+      callbackURL: '/auth/google/callback',
+      proxy: true //解決http and https的問題
     },
     (accessToken, refreshToken, profile, done) => {
       //console.log('access token', accessToken);
