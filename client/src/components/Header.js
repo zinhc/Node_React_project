@@ -7,6 +7,7 @@ class Header extends Component {
   renderContent() {
     //auth只可能有3種情況,null,false,和有資料的情況
     console.log('回傳 : ', this.props.auth);
+    console.log('callback', this.props.auth);
     switch (this.props.auth) {
       case null:
         return;
