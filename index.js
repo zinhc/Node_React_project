@@ -5,6 +5,7 @@ const passport = require('passport');
 const bodyParser = require('body-parser');
 const keys = require('./config/keys');
 require('./models/User');
+require('./models/Survey');
 //const passportCofig = require('./services/passport'); 等同下方
 require('./services/passport');
 
@@ -29,6 +30,7 @@ app.use(passport.session());
 //等同上方2行寫法 require('./routes/authRoutes')回傳一個function
 require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
+require('./routes/surveyRoutes')(app);
 
 //在heroku上
 if (process.env.NODE_ENV === 'production') {
